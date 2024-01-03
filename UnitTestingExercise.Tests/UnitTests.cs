@@ -1,4 +1,3 @@
-using System;
 using Xunit;
 
 namespace UnitTestingExercise.Tests
@@ -6,62 +5,59 @@ namespace UnitTestingExercise.Tests
     public class UnitTests
     {
         [Theory]
-        [InlineData(2, 3, 5, 10)] //Add test data <-------
+        [InlineData(2, 3, 5, 10)]
         public void AddTest(int num1, int num2, int num3, int expected)
         {
-            //Start Step 3 here:
+            // Arrange
+            var calculator = new Calculator(); 
 
-            //Arrange
-            // create a Calculator object
-            
+            // Act
+            var actual = calculator.Add(num1, num2, num3); 
 
-            //Act
-                // call the Add method that is located in the Calculator class
-                // and store its result in a variable named actual
-
-            //Assert
-                //Assert.Equal(expected, actual);
+            // Assert
+            Assert.Equal(expected, actual);
         }
 
         [Theory]
-        [InlineData()]//Add test data <-------
-        public void SubtractTest(int minuend, int subtrhend, int expected)
+        [InlineData(8, 3, 5)]
+        public void SubtractTest(int minuend, int subtrahend, int expected)
         {
-            //Start Step 5 here:
+            // Arrange
+            var calculator = new Calculator(); 
 
-            //Arrange
+            // Act
+            var actual = calculator.Subtract(minuend, subtrahend); 
 
-            //Act
-
-            //Assert
-
+            // Assert
+            Assert.Equal(expected, actual);
         }
 
         [Theory]
-        [InlineData()]//Add test data <-------
+        [InlineData(4, 5, 20)]
         public void MultiplyTest(int num1, int num2, int expected)
         {
-            //Start Step 7 here:
+            // Arrange
+            var calculator = new Calculator(); 
 
-            //Arrange
+            // Act
+            var actual = calculator.Multiply(num1, num2); 
 
-            //Act
-
-            //Assert
-
+            // Assert
+            Assert.Equal(expected, actual);
         }
 
         [Theory]
-        [InlineData()]//Add test data <-------
+        [InlineData(10, 2, 5)]
         public void DivideTest(int num1, int num2, int expected)
         {
-            //Arrange
+            // Arrange
+            var calculator = new Calculator(); 
 
-            //Act
+            // Act
+            var actual = calculator.Divide(num1, num2); 
 
-            //Assert
-
+            // Assert
+            Assert.Equal(expected, actual);
         }
-
     }
 }
